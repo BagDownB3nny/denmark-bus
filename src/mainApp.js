@@ -3,12 +3,14 @@ import { useState } from "react";
 import Timer from "./timer";
 import CurrentTimer from "./currentTimer";
 
+import gifspinner from "./assets/denmark_circle_cropped.gif";
+
 const MainApp = ({ from, fromCode, to, toCode, setShowMain, color }) => {
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
 
-  const firstTop = height * 0.388;
-  const secondTop = height * 0.463;
+  const firstTop = height * 0.345;
+  const secondTop = height * 0.416;
   const locationLeft = width * 0.18;
   const codeLeft = width * 0.75;
   const timerTop = height * 0.58;
@@ -41,10 +43,10 @@ const MainApp = ({ from, fromCode, to, toCode, setShowMain, color }) => {
     },
     background: {
       position: "absolute",
-      width: width * 0.915,
+      width: width * 0.9,
       height: height * 0.329,
-      top: height * 0.188,
-      left: width * 0.043,
+      top: height * 0.17,
+      left: width * 0.05,
       zIndex: 1,
       borderTopLeftRadius: 20,
       borderTopRightRadius: 20,
@@ -108,7 +110,7 @@ const MainApp = ({ from, fromCode, to, toCode, setShowMain, color }) => {
       color: "rgba(200,200,200,100)",
       // color: 'white',
       fontWeight: "bold",
-      fontSize: 20,
+      fontSize: 22,
       textAlign: "center",
       backgroundColor: "rgba(0,0,0,0)",
     },
@@ -117,95 +119,164 @@ const MainApp = ({ from, fromCode, to, toCode, setShowMain, color }) => {
       color: "rgba(20,20,20,100)",
       // color: 'white',
       fontWeight: "bold",
-      fontSize: 16,
+      fontSize: 20,
       textAlign: "center",
       backgroundColor: "rgba(0,0,0,0)",
     },
   };
 
-  const handleResize = () => {
-    setWidth(window.innerWidth);
-    setHeight(window.innerHeight);
-  };
+  // const handleResize = () => {
+  //   setWidth(window.innerWidth);
+  //   setHeight(window.innerHeight);
+  // };
 
-  React.useEffect(() => {
-    window.addEventListener("resize", handleResize);
+  // React.useEffect(() => {
+  //   window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
 
   return (
-    <div style={styles.container}>
-      <img
-        className="ss"
-        style={styles.image}
-        src={require("./assets/top.jpg")}
-      />
-      <div style={{ ...styles.background, backgroundColor: color }}></div>
-      <div style={styles.boxwrapper}>
+    <>
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+          background: "white",
+        }}
+      >
         <img
-          className="ss"
-          style={styles.imagebox}
+          style={{
+            width: 428,
+            height: 527,
+            left: 0,
+            top: 0,
+            position: "absolute",
+          }}
+          src={require("./assets/top.jpg")}
+          alt=""
+        />
+        <img
+          style={{
+            width: 428,
+            height: 465,
+            left: 0,
+            top: 106,
+            position: "absolute",
+            zIndex: 2,
+          }}
           src={require("./assets/box.jpg")}
+          alt=""
         />
-      </div>
-      <img
-        className="ss"
-        style={styles.map}
-        src={require("./assets/map.jpg")}
-      />
-      <img
-        className="ss"
-        style={styles.arrows}
-        src={require("./assets/arrows.png")}
-      />
-      <CurrentTimer
-        style={{
-          ...styles.currenttimer,
-          top: currentTimerTop,
-          left: currentTimerLeft,
-        }}
-      />
-      <p style={{ ...styles.text, top: firstTop, left: locationLeft }}>
-        {from}
-      </p>
-      <p
-        style={{
-          ...styles.codetext,
-          top: firstTop,
-          left: codeLeft,
-          color: "grey",
-        }}
-      >
-        {fromCode}
-      </p>
-      <p style={{ ...styles.text, top: secondTop, left: locationLeft }}>{to}</p>
-      <p
-        style={{
-          ...styles.codetext,
-          top: secondTop,
-          left: codeLeft,
-          color: "grey",
-        }}
-      >
-        {toCode}
-      </p>
-      <Timer style={{ ...styles.timer, top: timerTop, left: timerLeft }} />
-      <img
-        className="ss"
-        style={styles.image2}
-        src={require("./assets/btm.jpg")}
-        resizeMode="contain"
-      />
-      <button style={styles.gif} onClick={() => setShowMain(false)}>
         <img
-          style={{ ...styles.gif, top: gifTop, left: gifLeft }}
-          src={require("./assets/denmark_circle_cropped.gif")}
+          style={{
+            width: 353,
+            height: 122,
+            left: 36,
+            top: 326,
+            position: "absolute",
+            zIndex: 3,
+          }}
+          src={require("./assets/arrows.png")}
+          alt=""
         />
-      </button>
-    </div>
+        <p style={{ ...styles.text, top: firstTop, left: locationLeft }}>
+          {from}
+        </p>
+        <p
+          style={{
+            ...styles.codetext,
+            top: firstTop,
+            left: codeLeft,
+            color: "grey",
+          }}
+        >
+          {fromCode}
+        </p>
+        <p style={{ ...styles.text, top: secondTop, left: locationLeft }}>
+          {to}
+        </p>
+        <p
+          style={{
+            ...styles.codetext,
+            top: secondTop,
+            left: codeLeft,
+            color: "grey",
+          }}
+        >
+          {toCode}
+        </p>
+        <CurrentTimer
+          style={{
+            ...styles.currenttimer,
+            width: 160,
+            height: 36,
+            left: 134,
+            top: 120,
+            position: "absolute",
+            textAlign: "center",
+            wordWrap: "break-word",
+            zIndex: 4,
+          }}
+        />
+        <Timer
+          style={{
+            ...styles.timer,
+            width: 121,
+            height: 36,
+            left: 268,
+            top: 510,
+            position: "absolute",
+            textAlign: "right",
+            wordWrap: "break-word",
+            zIndex: 4,
+          }}
+        />
+        <img
+          style={{
+            width: 428,
+            height: 430,
+            left: 0,
+            top: 571,
+            position: "absolute",
+          }}
+          src={require("./assets/btm.jpg")}
+          alt=""
+        />
+        <img
+          style={{
+            width: 377,
+            height: 152,
+            left: 25,
+            top: 166,
+            position: "absolute",
+            zIndex: 3,
+            borderTopLeftRadius: 12,
+            borderTopRightRadius: 12,
+          }}
+          src={require("./assets/map.jpg")}
+          alt=""
+        />
+        <img
+          style={{
+            width: 149,
+            height: 117,
+            left: 38,
+            top: 668,
+            position: "absolute",
+          }}
+          src={gifspinner}
+          alt=""
+          onClick={() => setShowMain(false)}
+        />
+        <div
+          style={{ ...styles.background, zIndex: 2, backgroundColor: color }}
+        ></div>
+      </div>
+    </>
   );
 };
 

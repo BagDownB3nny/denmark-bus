@@ -36,78 +36,101 @@ const SettingsPage = ({
   return (
     <div
       style={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        marginTop: 200,
+        width: "100dvw",
+        height: "100dvh",
+        position: "absolute",
+        top: 0,
+        left: 0,
       }}
     >
-      <label>From name</label>
-      <input
-        value={input1}
-        onChange={(e) => setInput1(e.target.value)}
-        style={{
-          borderWidth: 1,
-          borderColor: "black",
-          width: 200,
-          height: 40,
-          marginBottom: 20,
-        }}
-      />
-      <label>From code</label>
-      <input
-        value={input2}
-        onChange={(e) => setInput2(e.target.value)}
-        style={{
-          borderWidth: 1,
-          borderColor: "black",
-          width: 200,
-          height: 40,
-          marginBottom: 20,
-        }}
-      />
-      <label>To name</label>
-      <input
-        value={input3}
-        onChange={(e) => setInput3(e.target.value)}
-        style={{
-          borderWidth: 1,
-          borderColor: "black",
-          width: 200,
-          height: 40,
-          marginBottom: 20,
-        }}
-      />
-      <label>To Code</label>
-      <input
-        value={input4}
-        onChange={(e) => setInput4(e.target.value)}
-        style={{
-          borderWidth: 1,
-          borderColor: "black",
-          width: 200,
-          height: 40,
-          marginBottom: 20,
-        }}
-      />
-      <label>Choose color</label>
       <div
-        style={{ color: color, backgroundColor: "rgb(20,20,20)", fontSize: 30 }}
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          width: "100%",
+          height: "100%",
+          flexDirection: "column",
+        }}
       >
-        Current color
+        <label>From name</label>
+        <input
+          value={input1}
+          onChange={(e) => setInput1(e.target.value)}
+          style={{
+            borderWidth: 1,
+            borderColor: "black",
+            width: 200,
+            height: 40,
+            marginBottom: 20,
+          }}
+        />
+        <label>From code</label>
+        <input
+          value={input2}
+          onChange={(e) => setInput2(e.target.value)}
+          style={{
+            borderWidth: 1,
+            borderColor: "black",
+            width: 200,
+            height: 40,
+            marginBottom: 20,
+          }}
+        />
+        <label>To name</label>
+        <input
+          value={input3}
+          onChange={(e) => setInput3(e.target.value)}
+          style={{
+            borderWidth: 1,
+            borderColor: "black",
+            width: 200,
+            height: 40,
+            marginBottom: 20,
+          }}
+        />
+        <label>To Code</label>
+        <input
+          value={input4}
+          onChange={(e) => setInput4(e.target.value)}
+          style={{
+            borderWidth: 1,
+            borderColor: "black",
+            width: 200,
+            height: 40,
+            marginBottom: 20,
+          }}
+        />
+        <label>Choose color</label>
+        <div
+          style={{
+            color: color,
+            backgroundColor: "rgb(20,20,20)",
+            fontSize: 30,
+          }}
+        >
+          Current color
+        </div>
+        <select
+          onChange={(e) => setColor(e.target.value)}
+          value={color}
+          style={{
+            fontSize: 20,
+            backgroundColor: "rgb(20,20,20)",
+          }}
+        >
+          {colors.map((option) => (
+            <option
+              key={option.value}
+              value={option.value}
+              style={{ color: "white" }}
+            >
+              {option.label}
+            </option>
+          ))}
+        </select>
+        <button onClick={handleSave}>Save</button>
       </div>
-      <select
-        onChange={(e) => setColor(e.target.value)}
-        value={color}
-        style={{ fontSize: 50, backgroundColor: "rgb(20,20,20)" }}
-      >
-        {colors.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
-          </option>
-        ))}
-      </select>
-      <button onClick={handleSave}>Save</button>
     </div>
   );
 };
