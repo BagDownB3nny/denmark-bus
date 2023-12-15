@@ -9,6 +9,11 @@ const App = () => {
   const [toCode, setToCode] = useState('4303');
   const [showMain, setShowMain] = useState(false);
   const [color, setColor] = useState('rgb(161,216,239)');
+  const topSource = require('./assets/top.jpg');
+  const boxSource = require('./assets/box.jpg');
+  const mapSource = require('./assets/map.jpg');
+  const arrowsSource = require('./assets/arrows.png');
+  const btmSource = require('./assets/btm.jpg');
 
   if (showMain) {
     return (
@@ -19,6 +24,11 @@ const App = () => {
         toCode={toCode}
         setShowMain={setShowMain}
         color={color}
+        topSource={topSource}
+        boxSource={boxSource}
+        mapSource={mapSource}
+        arrowsSource={arrowsSource}
+        btmSource={btmSource}
       />
     );
   } else {

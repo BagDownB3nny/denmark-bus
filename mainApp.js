@@ -9,7 +9,12 @@ const MainApp = ({
     to,
     toCode,
     setShowMain,
-    color
+    color,
+    topSource,
+    boxSource,
+    mapSource,
+    arrowsSource,
+    btmSource,
 }) => {
   const firstTop = height * 0.388;
   const secondTop = height * 0.463;
@@ -26,22 +31,22 @@ const MainApp = ({
     <View style={styles.container}>
       <Image className="ss"
         style={[styles.image]} 
-        source={require('./assets/top.jpg')}  
+        source={topSource}  
       />
       <View style={[styles.background, {backgroundColor: color}]}></View>
       <View style={styles.boxwrapper}>
         <Image className="ss"
           style={[styles.imagebox]} 
-          source={require('./assets/box.jpg')}  
+          source={boxSource}  
         />
       </View>
       <Image className="ss"
         style={[styles.map]} 
-        source={require('./assets/map.jpg')}  
+        source={mapSource}  
       />
       <Image className="ss"
         style={[styles.arrows]} 
-        source={require('./assets/arrows.png')}  
+        source={arrowsSource}  
       />
       <CurrentTimer style={[styles.currenttimer, {top: currentTimerTop, left: currentTimerLeft}]}/>
        <Text style={[styles.text, {top: firstTop, left: locationLeft}]}>{from}</Text>
@@ -51,7 +56,7 @@ const MainApp = ({
        <Timer style={[styles.timer, {top: timerTop, left: timerLeft}]}/>
        <Image className="ss"
         style={styles.image2}
-        source={require('./assets/btm.jpg')} 
+        source={btmSource} 
         resizeMode="contain"
       />
         <TouchableOpacity style={styles.gif} onPress={() => setShowMain(false)}>

@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/static/js/main.3851e2eb.js",
+    "static/js/787.5c1aa620.chunk.js": "/static/js/787.5c1aa620.chunk.js",
+    "static/media/denmark_circle_cropped.gif": "/static/media/denmark_circle_cropped.bb3cf5995162b0187617.gif",
+    "static/media/top.jpg": "/static/media/top.9449d3d2acc93ee5d984.jpg",
+    "static/media/btm.jpg": "/static/media/btm.99c3207d9e6e0a244ae4.jpg",
+    "static/media/box.jpg": "/static/media/box.b111a3659b3784f80fa9.jpg",
+    "static/media/map.jpg": "/static/media/map.5954d91199ce68e75915.jpg",
+    "service-worker.js": "/service-worker.js",
+    "static/media/arrows.png": "/static/media/arrows.d5c3c5b5384c917e0e41.png",
+    "index.html": "/index.html",
+    "main.3851e2eb.js.map": "/static/js/main.3851e2eb.js.map",
+    "787.5c1aa620.chunk.js.map": "/static/js/787.5c1aa620.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.3851e2eb.js"
+  ]
+}
