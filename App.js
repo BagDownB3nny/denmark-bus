@@ -8,6 +8,7 @@ const App = () => {
   const [to, setTo] = useState('Aarhus Nord');
   const [toCode, setToCode] = useState('4303');
   const [showMain, setShowMain] = useState(false);
+  const [color, setColor] = useState('rgb(161,216,239)');
 
   if (showMain) {
     return (
@@ -17,6 +18,7 @@ const App = () => {
         to={to}
         toCode={toCode}
         setShowMain={setShowMain}
+        color={color}
       />
     );
   } else {
@@ -31,6 +33,8 @@ const App = () => {
         toCode={toCode}
         setToCode={setToCode}
         setShowMain={setShowMain}
+        color={color}
+        setColor={setColor}
       />
     );
   }

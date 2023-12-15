@@ -8,7 +8,8 @@ const MainApp = ({
     fromCode,
     to,
     toCode,
-    setShowMain
+    setShowMain,
+    color
 }) => {
   const firstTop = height * 0.388;
   const secondTop = height * 0.463;
@@ -27,12 +28,21 @@ const MainApp = ({
         style={[styles.image]} 
         source={require('./assets/top.jpg')}  
       />
+      <View style={[styles.background, {backgroundColor: color}]}></View>
       <View style={styles.boxwrapper}>
         <Image className="ss"
           style={[styles.imagebox]} 
           source={require('./assets/box.jpg')}  
         />
       </View>
+      <Image className="ss"
+        style={[styles.map]} 
+        source={require('./assets/map.jpg')}  
+      />
+      <Image className="ss"
+        style={[styles.arrows]} 
+        source={require('./assets/arrows.png')}  
+      />
       <CurrentTimer style={[styles.currenttimer, {top: currentTimerTop, left: currentTimerLeft}]}/>
        <Text style={[styles.text, {top: firstTop, left: locationLeft}]}>{from}</Text>
        <Text style={[styles.codetext, {top: firstTop, left: codeLeft, color: 'grey'}]}>{fromCode}</Text>
@@ -59,6 +69,36 @@ const { width, height } = Dimensions.get('screen');
 
 // Define your styles
 const styles = StyleSheet.create({
+    arrows: {
+        position: 'absolute',
+        width: width * 0.83,
+        height: height * 0.11,
+        top: height * 0.38,
+        left: width * 0.08,
+        zIndex: 2,
+        borderTopLeftRadius: 13,
+        borderTopRightRadius: 13,
+    },
+    map: {
+        position: 'absolute',
+        width: width * 0.894,
+        height: height * 0.17,
+        top: height * 0.192,
+        left: width * 0.054,
+        zIndex: 2,
+        borderTopLeftRadius: 13,
+        borderTopRightRadius: 13,
+    },
+    background: {
+        position: 'absolute',
+        width: width*0.915,
+        height: height * 0.329,
+        top: height * 0.188,
+        left: width * 0.043,
+        zIndex: 1,
+        borderTopLeftRadius: 20,
+        borderTopRightRadius: 20,
+    },
     button: {
         zIndex: 100,
     },
@@ -101,6 +141,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0)',
     transform: [{ scaleY: 1.1 }],
     fontWeight: '700',
+    zIndex: 4,
   }, 
   codetext: {
     position: 'absolute',
@@ -111,6 +152,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(0,0,0,0)',
     transform: [{ scaleY: 1.1 }],
     fontWeight: '700',
+    zIndex: 4,
   }, 
   timer: {
     position: 'absolute',

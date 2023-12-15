@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Text, View, TextInput, Button, StyleSheet } from 'react-native';
+import { SelectList } from 'react-native-dropdown-select-list';
+import RNPickerSelect from 'react-native-picker-select';
 
 const SettingsPage = ({ 
     from,
@@ -10,8 +12,18 @@ const SettingsPage = ({
     setTo, 
     toCode,
     setToCode, 
-    setShowMain
+    setShowMain,
+    color,
+    setColor,
 }) => {
+
+    const colors = [
+        {label: 'Blue', value: 'rgb(161,216,239)'},
+        {label: 'Yellow', value: 'rgb(251,221,149)'},
+        {label: 'Cyan', value: 'rgb(166,237,233)'},
+        {label: 'Orange', value: 'rgb(241,177,139)'},
+        {label: 'Purple', value: 'rgb(162,172,238)'}
+       ];
     const [input1, setInput1] = useState(from);
     const [input2, setInput2] = useState(fromCode);
     const [input3, setInput3] = useState(to);
@@ -51,6 +63,16 @@ const SettingsPage = ({
                 onChangeText={setInput4}
                 style={styles.input}
             />
+            <Text>Choose color</Text>
+            <Text style={{color:color, backgroundColor: "rgb(20,20,20)", fontSize:30}}>Current color</Text>
+            <View style={{display:"flex" }}>
+                <RNPickerSelect
+                    onValueChange={setColor}
+                    items={colors}
+                    value={color}
+                    style={{ fontSize: 50, backgroundColor: "rgb(20,20,20)" }} 
+                />
+            </View>
             <Button title="Save" onPress={handleSave} />
         </View>
     );
