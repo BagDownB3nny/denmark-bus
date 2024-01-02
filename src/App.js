@@ -12,6 +12,7 @@ const App = () => {
   const [showMain, setShowMain] = useState(false);
   const [color, setColor] = useState("rgb(161,216,239)");
 
+
   if (showMain) {
     return (
       <MainApp
@@ -19,8 +20,8 @@ const App = () => {
         fromCode={fromCode}
         to={to}
         toCode={toCode}
-        firstTop={firstTopRatio}
-        secondTop={secondTopRatio}
+        firstTopRatio={firstTopRatio}
+        secondTopRatio={secondTopRatio}
         setShowMain={setShowMain}
         color={color}
       />
