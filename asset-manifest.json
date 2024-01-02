@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.js": "/denmark-bus/static/js/main.c9fa71bb.js",
+    "static/js/787.5c1aa620.chunk.js": "/denmark-bus/static/js/787.5c1aa620.chunk.js",
+    "static/media/denmark_circle_cropped.gif": "/denmark-bus/static/media/denmark_circle_cropped.bb3cf5995162b0187617.gif",
+    "static/media/top.jpg": "/denmark-bus/static/media/top.9449d3d2acc93ee5d984.jpg",
+    "static/media/btm.jpg": "/denmark-bus/static/media/btm.99c3207d9e6e0a244ae4.jpg",
+    "static/media/box.jpg": "/denmark-bus/static/media/box.b111a3659b3784f80fa9.jpg",
+    "static/media/map.jpg": "/denmark-bus/static/media/map.5954d91199ce68e75915.jpg",
+    "service-worker.js": "/denmark-bus/service-worker.js",
+    "static/media/arrows.png": "/denmark-bus/static/media/arrows.d5c3c5b5384c917e0e41.png",
+    "index.html": "/denmark-bus/index.html",
+    "main.c9fa71bb.js.map": "/denmark-bus/static/js/main.c9fa71bb.js.map",
+    "787.5c1aa620.chunk.js.map": "/denmark-bus/static/js/787.5c1aa620.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.c9fa71bb.js"
+  ]
+}
