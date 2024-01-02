@@ -9,6 +9,10 @@ const SettingsPage = ({
   setTo,
   toCode,
   setToCode,
+  firstTopRatio,
+  setFirstTopRatio,
+  secondTopRatio,
+  setSecondTopRatio,
   setShowMain,
   color,
   setColor,
@@ -24,12 +28,16 @@ const SettingsPage = ({
   const [input2, setInput2] = useState(fromCode);
   const [input3, setInput3] = useState(to);
   const [input4, setInput4] = useState(toCode);
+  const [input5, setInput5] = useState(firstTopRatio);
+  const [input6, setInput6] = useState(secondTopRatio);
 
   const handleSave = () => {
     setFrom(input1);
     setFromCode(input2);
     setTo(input3);
     setToCode(input4);
+    setFirstTopRatio(input5);
+    setSecondTopRatio(input6);
     setShowMain(true);
   };
 
@@ -93,6 +101,30 @@ const SettingsPage = ({
         <input
           value={input4}
           onChange={(e) => setInput4(e.target.value)}
+          style={{
+            borderWidth: 1,
+            borderColor: "black",
+            width: 200,
+            height: 40,
+            marginBottom: 20,
+          }}
+        />
+        <label>First top</label>
+        <input
+          value={input5}
+          onChange={(e) => setInput5(e.target.value)}
+          style={{
+            borderWidth: 1,
+            borderColor: "black",
+            width: 200,
+            height: 40,
+            marginBottom: 20,
+          }}
+        />
+        <label>Second top</label>
+        <input
+          value={input6}
+          onChange={(e) => setInput6(e.target.value)}
           style={{
             borderWidth: 1,
             borderColor: "black",

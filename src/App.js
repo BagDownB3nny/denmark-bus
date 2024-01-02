@@ -7,6 +7,8 @@ const App = () => {
   const [fromCode, setFromCode] = useState("4301");
   const [to, setTo] = useState("Aarhus Nord");
   const [toCode, setToCode] = useState("4303");
+  const [firstTopRatio, setFirstTopRatio] = useState("0.365");
+  const [secondTopRatio, setSecondTopRatio] = useState("0.44");
   const [showMain, setShowMain] = useState(false);
   const [color, setColor] = useState("rgb(161,216,239)");
 
@@ -17,6 +19,8 @@ const App = () => {
         fromCode={fromCode}
         to={to}
         toCode={toCode}
+        firstTop={firstTopRatio}
+        secondTop={secondTopRatio}
         setShowMain={setShowMain}
         color={color}
       />
@@ -32,6 +36,10 @@ const App = () => {
         setTo={setTo}
         toCode={toCode}
         setToCode={setToCode}
+        firstTopRatio={firstTopRatio}
+        setFirstTopRatio={setFirstTopRatio}
+        secondTopRatio={secondTopRatio}
+        setSecondTopRatio={setSecondTopRatio}
         setShowMain={setShowMain}
         color={color}
         setColor={setColor}

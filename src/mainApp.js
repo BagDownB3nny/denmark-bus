@@ -5,12 +5,12 @@ import CurrentTimer from "./currentTimer";
 
 import gifspinner from "./assets/denmark_circle_cropped.gif";
 
-const MainApp = ({ from, fromCode, to, toCode, setShowMain, color }) => {
+const MainApp = ({ from, fromCode, to, toCode, setShowMain, color, firstTopRatio, secondTopRatio }) => {
   const [width, setWidth] = useState(window.innerWidth);
   const [height, setHeight] = useState(window.innerHeight);
 
-  const firstTop = height * 0.345;
-  const secondTop = height * 0.416;
+  const firstTop = height * parseFloat(firstTopRatio);
+  const secondTop = height * parseFloat(secondTopRatio);
   const locationLeft = width * 0.18;
   const codeLeft = width * 0.75;
   const timerTop = height * 0.58;
@@ -19,6 +19,9 @@ const MainApp = ({ from, fromCode, to, toCode, setShowMain, color }) => {
   const gifLeft = width * 0.085;
   const currentTimerTop = height * 0.15;
   const currentTimerLeft = width * 0.38;
+
+  console.log(firstTop);
+  console.log(secondTop);
 
   const styles = {
     arrows: {
@@ -44,7 +47,7 @@ const MainApp = ({ from, fromCode, to, toCode, setShowMain, color }) => {
     background: {
       position: "absolute",
       width: width * 0.9,
-      height: height * 0.329,
+      height: height * 0.348,
       top: height * 0.17,
       left: width * 0.05,
       zIndex: 1,
