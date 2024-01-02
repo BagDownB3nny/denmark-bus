@@ -51,6 +51,7 @@ const SettingsPage = ({
         left: 0,
       }}
     >
+      <div>Hi</div>
       <div
         style={{
           display: "flex",
